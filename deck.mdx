@@ -1,146 +1,234 @@
-import {
-  CodeSurfer,
-  CodeSurferColumns,
-  Step,
-} from "code-surfer";
-import { github, vsDark } from "@code-surfer/themes";
+import { CodeSurfer } from "code-surfer"
+import { CodeSurferColumns, Step } from "code-surfer"
+import "prismjs/components/prism-dart"
 
-export const theme = vsDark;
+import FlutterDaLogo from './assets/img/flutter_da_logo.png'
 
-# Hello 👋
+import materialWidgetVideo from './assets/mov/material_widgets_recording.mp4'
+import DribbbleVideo from './assets/mov/dribbble.mp4'
+import NutritionDesignVideo from './assets/mov/nutrition_design.mp4'
+import NutritionPieChartResultAnimationVideo from './assets/mov/pie_chart_animation.mp4'
 
-You are using [MDX Deck](https://github.com/jxnblk/mdx-deck) and [Code Surfer](https://codesurfer.pomb.us)
+import MaterialDemoImage from './assets/img/material_demo.png'
+import NutritionScreenImage from './assets/img/nutrition_screen.png'
+import NutritionRootLayoutImage from './assets/img/nutrition_root_layout.png'
+import NutritionBottomBarImage from './assets/img/nutrition_bottom_bar.png'
+import NutritionBodyLayoutImage from './assets/img/nutrition_body_layout.png'
+import NutritionAppBarLayoutImage from './assets/img/nutrition_app_bar_layout.png'
+import NutritionBottomBarLayoutImage from './assets/img/nutrition_bottom_bar_layout.png'
+import NutritionBarChartLayoutImage from './assets/img/nutrition_bar_chart_layout.png'
+import NutritionPieChartLayoutImage from './assets/img/nutrition_pie_chart_layout.png'
 
----
+import NutritionBottomBarResult1Image from './assets/img/nutrition/bottom_bar_1.png'
+import NutritionBottomBarResult2Image from './assets/img/nutrition/bottom_bar_2.png'
+import NutritionBottomBarResult3Image from './assets/img/nutrition/bottom_bar_3.png'
+import NutritionBottomBarResult4Image from './assets/img/nutrition/bottom_bar_4.png'
+import NutritionBottomBarResult5Image from './assets/img/nutrition/bottom_bar_5.png'
 
-<CodeSurfer>
+import NutritionAppBarResult1Image from './assets/img/nutrition/app_bar_1.png'
+import NutritionAppBarResult2Image from './assets/img/nutrition/app_bar_2.png'
+import NutritionAppBarResult3Image from './assets/img/nutrition/app_bar_3.png'
+import NutritionAppBarResult4Image from './assets/img/nutrition/app_bar_4.png'
+import NutritionAppBarResult5Image from './assets/img/nutrition/app_bar_5.png'
+import NutritionAppBarResult6Image from './assets/img/nutrition/app_bar_6.png'
 
-```js title="This is a title" subtitle="and this a subtitle"
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  dolor = sit - amet(dolor);
-  return sit
-    ? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor)
-    : [];
-}
+import NutritionBodyResult1Image from './assets/img/nutrition/body_1.png'
+import NutritionBodyResult2Image from './assets/img/nutrition/body_2.png'
+import NutritionBodyResult3Image from './assets/img/nutrition/body_3.png'
+import NutritionBodyResult4Image from './assets/img/nutrition/body_4.png'
+import NutritionBodyResult5Image from './assets/img/nutrition/body_5.png'
+import NutritionBodyResult6Image from './assets/img/nutrition/body_6.png'
+import NutritionBodyResult7Image from './assets/img/nutrition/body_7.png'
+import NutritionBodyResult8Image from './assets/img/nutrition/body_8.png'
+import NutritionBodyResult9Image from './assets/img/nutrition/body_9.png'
+import NutritionBodyResult10Image from './assets/img/nutrition/body_10.png'
 
-function incididunt(ipsum, ut = 1) {
-  ut = labore.et(amet(ut), 0);
-  const sit = ipsum == null ? 0 : ipsum.sit;
+import NutritionDataBarResult1Image from './assets/img/nutrition/data_bar_1.png'
+import NutritionDataBarResult2Image from './assets/img/nutrition/data_bar_2.png'
+import NutritionDataBarResult3Image from './assets/img/nutrition/data_bar_3.png'
+import NutritionDataBarResult4Image from './assets/img/nutrition/data_bar_4.png'
+import NutritionDataBarResult5Image from './assets/img/nutrition/data_bar_5.png'
+import NutritionDataBarResult6Image from './assets/img/nutrition/data_bar_6.png'
+import NutritionDataBarResult7Image from './assets/img/nutrition/data_bar_7.png'
+import NutritionDataBarResult8Image from './assets/img/nutrition/data_bar_8.png'
 
-  if (!sit || ut < 1) {
-    return [];
-  }
+import NutritionBarChartResult2Image from './assets/img/nutrition/bar_chart_2.png'
+import NutritionBarChartResult3Image from './assets/img/nutrition/bar_chart_3.png'
+import NutritionBarChartResult4Image from './assets/img/nutrition/bar_chart_4.png'
+import NutritionBarChartResult5Image from './assets/img/nutrition/bar_chart_5.png'
 
-  let dolore = 0;
-  let magna = 0;
-  const aliqua = new eiusmod(labore.ut(sit / ut));
+import NutritionPiePainterResult1Image from './assets/img/nutrition/pie_painter_1.png'
+import NutritionPiePainterResult2Image from './assets/img/nutrition/pie_painter_2.png'
+import NutritionPiePainterResult3Image from './assets/img/nutrition/pie_painter_3.png'
+import NutritionPiePainterResult4Image from './assets/img/nutrition/pie_painter_4.png'
+import NutritionPiePainterResult5Image from './assets/img/nutrition/pie_painter_5.png'
+import NutritionPiePainterResult6Image from './assets/img/nutrition/pie_painter_6.png'
+import NutritionPiePainterResult7Image from './assets/img/nutrition/pie_painter_7.png'
+import NutritionPiePainterResult8Image from './assets/img/nutrition/pie_painter_8.png'
+import NutritionPiePainterResult9Image from './assets/img/nutrition/pie_painter_9.png'
+import NutritionPiePainterResult10Image from './assets/img/nutrition/pie_painter_10.png'
+import NutritionPiePainterResult11Image from './assets/img/nutrition/pie_painter_11.png'
 
-  while (dolore < sit) {
-    aliqua[magna++] = consectetur(
-      ipsum,
-      dolore,
-      (dolore += ut)
-    );
-  }
+import NutritionPieChartResult1Image from './assets/img/nutrition/pie_chart_1.png'
+import NutritionPieChartResult2Image from './assets/img/nutrition/pie_chart_2.png'
 
-  return aliqua;
-}
-```
 
-```js
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  dolor = sit - amet(dolor);
-  return sit
-    ? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor)
-    : [];
-}
+import { Split, SplitRight } from 'mdx-deck'
 
-function adipiscing(...elit) {
-  if (!elit.sit) {
-    return [];
-  }
+import { Appear } from 'mdx-deck'
 
-  const sed = elit[0];
-  return eiusmod.tempor(sed) ? sed : [sed];
-}
+<img style={{height: '16rem'}} src={FlutterDaLogo}/>
 
-function incididunt(ipsum, ut = 1) {
-  ut = labore.et(amet(ut), 0);
-  const sit = ipsum == null ? 0 : ipsum.sit;
+# Flutter Darmstadt #2
+## Complex Layouts
 
-  if (!sit || ut < 1) {
-    return [];
-  }
-
-  let dolore = 0;
-  let magna = 0;
-  const aliqua = new eiusmod(labore.ut(sit / ut));
-
-  while (dolore < sit) {
-    aliqua[magna++] = consectetur(
-      ipsum,
-      dolore,
-      (dolore += ut)
-    );
-  }
-
-  return aliqua;
-}
-```
-
-```diff 1[10:14],2[15:19],3[22:27],10:12
-
-```
-
-</CodeSurfer>
+@ahawlitschek
 
 ---
 
-<CodeSurferColumns themes={[vsDark, github]}>
+# What can we easily achieve using flutter?
+
+---
+
+<video controls>
+  <source src={materialWidgetVideo} />
+</video>
+
+---
+
+<Split>
+
+## Building Default Material Layouts with Flutter isn't that hard
+
+<img style={{ width: '50%'}} src={MaterialDemoImage}/>
+
+</Split>
+
+---
+
+# BUT,
+
+## Designers often tend to create _individual_ and _complex_ layouts
+
+---
+
+<video controls>
+  <source src={DribbbleVideo} />
+</video>
+
+---
+
+<h2><span style={{color: '#45D1FD'}}>"</span>How do I implement this?</h2>
+
+<h2><span style={{color: '#45D1FD'}}>"</span>Is there a widget for some of the components?</h2>
+
+<h2><span style={{color: '#45D1FD'}}>"</span>Is it even possible to implement?</h2>
+
+---
+
+# How to break down complex layouts?
+
+---
+
+<video controls>
+  <source src={NutritionDesignVideo} />
+</video>
+
+---
+
+<img style={{ margin: '4rem'}}  src={NutritionScreenImage}/>
+
+---
+
+<SplitRight>
+
+<img style={{ margin: '4rem', width: '50%'}}  src={NutritionRootLayoutImage}/>
+
+## 1. Get a feeling for the root composition of the layout
+<br/>
+
+### App Bar
+
+### Body
+
+### Bottom Navigation
+
+<Appear>
+<p>
+<h2 style={{marginTop: '8rem'}}>=> Scaffold</h2>
+</p>
+</Appear>
+
+
+
+</SplitRight>
+
+---
+
+<SplitRight>
+
+<img style={{ margin: '4rem', height: '80%'}}  src={NutritionBottomBarLayoutImage}/>
+
+## The bottom Bar
+<br/>
+<Appear>
+
+### Evenly spaced items in a row
+### A shape with rounded top corners
+### Selected item has a label & background color
+<p>
+<h2 style={{marginTop: '8rem'}}>=> Build on our own</h2>
+</p>
+</Appear>
+
+</SplitRight>
+
+---
+
+<CodeSurferColumns sizes={[3,1]}>
 
 <Step>
 
-```js
-const magna = aliqua => aliqua.ut((enim, ad) => enim, 0);
+```dart file=./assets/code/nutrition/bottom_bar/1.dart
 ```
 
-```js
-const minim = (ad, enim) => dolore.magna(ad / enim);
-```
+<img style={{height: '75%'}} src={NutritionBottomBarResult1Image}/>
 
 </Step>
 
 <Step>
 
-```js
-const lorem = (ipsum, dolor, sit) => {
-  const amet = dolor - ipsum;
-  return consectetur.adipiscing(
-    {
-      elit: sed.eiusmod(sit - dolor) / amet + 2,
-    },
-    (tempor, incididunt) => ipsum + amet * incididunt
-  );
-};
-
-const magna = aliqua => aliqua.ut((enim, ad) => enim, 0);
+```dart file=./assets/code/nutrition/bottom_bar/2.dart
 ```
 
-```js
-const minim = (ad, enim) => dolore.magna(ad / enim);
+<img style={{height: '75%'}} src={NutritionBottomBarResult2Image}/>
 
-const sed = (eiusmod, tempor, incididunt) => {
-  const ut = tempor - eiusmod;
-  return labore.et(
-    {
-      amet: dolore.magna(incididunt - tempor) / ut + 2,
-    },
-    (aliqua, elit) => eiusmod + ut * elit
-  );
-};
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/bottom_bar/3.dart
 ```
+
+<img style={{height: '75%'}} src={NutritionBottomBarResult3Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/bottom_bar/4.dart
+```
+
+<img style={{height: '75%'}} src={NutritionBottomBarResult4Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/bottom_bar/5.dart
+```
+
+<img style={{height: '75%'}} src={NutritionBottomBarResult5Image}/>
 
 </Step>
 
@@ -148,5 +236,537 @@ const sed = (eiusmod, tempor, incididunt) => {
 
 ---
 
-docs:  
-[codesurfer.pomb.us](https://codesurfer.pomb.us)
+<SplitRight>
+
+<img style={{ margin: '4rem', height: '80%'}}  src={NutritionAppBarLayoutImage}/>
+
+## The App Bar
+<br/>
+<Appear>
+
+### Linear placed components (horizontal)
+### left <-> right aligned
+<p>
+<h2 style={{marginTop: '8rem'}}>=> Row</h2>
+</p>
+</Appear>
+
+</SplitRight>
+
+---
+
+<CodeSurferColumns sizes={[3,1]}>
+
+<Step>
+
+```dart file=./assets/code/nutrition/app_bar/1.dart
+```
+
+<img style={{height: '75%'}} src={NutritionAppBarResult1Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/app_bar/2.dart
+```
+
+<img style={{height: '75%'}} src={NutritionAppBarResult2Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/app_bar/3.dart
+```
+
+<img style={{height: '75%'}} src={NutritionAppBarResult3Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/app_bar/4.dart
+```
+
+<img style={{height: '75%'}} src={NutritionAppBarResult4Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/app_bar/5.dart
+```
+
+<img style={{height: '75%'}} src={NutritionAppBarResult5Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/app_bar/6.dart
+```
+
+<img style={{height: '75%'}} src={NutritionAppBarResult6Image}/>
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<SplitRight>
+
+<img style={{ margin: '4rem', height: '80%'}}  src={NutritionBodyLayoutImage}/>
+
+## The Body
+<br/>
+<Appear>
+
+### Linear placed components (vertical)
+### Upper & lower body parts
+<p>
+<h2 style={{marginTop: '8rem'}}>=> Column</h2>
+</p>
+</Appear>
+
+</SplitRight>
+
+---
+
+<CodeSurferColumns sizes={[3,1]}>
+
+<Step>
+
+```dart file=./assets/code/nutrition/body/1.dart
+```
+
+<img style={{height: '75%'}} src={NutritionBodyResult1Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/body/2.dart
+```
+
+<img style={{height: '75%'}} src={NutritionBodyResult2Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/body/3.dart
+```
+
+<img style={{height: '75%'}} src={NutritionBodyResult3Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/body/4.dart
+```
+
+<img style={{height: '75%'}} src={NutritionBodyResult4Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/body/5.dart
+```
+
+<img style={{height: '75%'}} src={NutritionBodyResult5Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/body/6.dart
+```
+
+<img style={{height: '75%'}} src={NutritionBodyResult6Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/body/7.dart
+```
+
+<img style={{height: '75%'}} src={NutritionBodyResult7Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/body/8.dart
+```
+
+<img style={{height: '75%'}} src={NutritionBodyResult8Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/body/9.dart
+```
+
+<img style={{height: '75%'}} src={NutritionBodyResult9Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/body/10.dart
+```
+
+<img style={{height: '75%'}} src={NutritionBodyResult10Image}/>
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<SplitRight>
+
+<img style={{ margin: '4rem', height: '80%'}}  src={NutritionBarChartLayoutImage}/>
+
+## The Bar Chart
+<br/>
+
+<Appear>
+
+### 7 evenly spaced columns
+### With a label & 2 bars (upper/lower bar)
+### Shared alignment
+<p>
+<h2 style={{marginTop: '8rem'}}>=> Custom Widget</h2>
+</p>
+
+</Appear>
+
+</SplitRight>
+
+---
+
+<CodeSurferColumns sizes={[3,1]}>
+
+<Step>
+
+```dart file=./assets/code/nutrition/data_bar/1.dart
+```
+
+<img style={{height: '75%'}} src={NutritionDataBarResult1Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/data_bar/2.dart
+```
+
+<img style={{height: '75%'}} src={NutritionDataBarResult2Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/data_bar/3.dart
+```
+
+<img style={{height: '75%'}} src={NutritionDataBarResult3Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/data_bar/4.dart
+```
+
+<img style={{height: '75%'}} src={NutritionDataBarResult4Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/data_bar/5.dart
+```
+
+<img style={{height: '75%'}} src={NutritionDataBarResult5Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/data_bar/6.dart
+```
+
+<img style={{height: '75%'}} src={NutritionDataBarResult6Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/data_bar/7.dart
+```
+
+<img style={{height: '75%'}} src={NutritionDataBarResult7Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/data_bar/8.dart
+```
+
+<img style={{height: '75%'}} src={NutritionDataBarResult8Image}/>
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns sizes={[3,1]}>
+
+<Step>
+
+```dart 86:92 file=./assets/code/nutrition/bar_chart/1.dart
+```
+
+<img style={{height: '75%'}} src={NutritionDataBarResult8Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/bar_chart/2.dart
+```
+
+<img style={{height: '75%'}} src={NutritionBarChartResult2Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/bar_chart/3.dart
+```
+
+<img style={{height: '75%'}} src={NutritionBarChartResult3Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/bar_chart/4.dart
+```
+
+<img style={{height: '75%'}} src={NutritionBarChartResult4Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/bar_chart/5.dart
+```
+
+<img style={{height: '75%'}} src={NutritionBarChartResult5Image}/>
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<SplitRight>
+
+<img style={{ margin: '4rem', height: '80%'}}  src={NutritionPieChartLayoutImage}/>
+
+## The Bar Chart
+<br/>
+
+<Appear>
+
+### Drawn alike UI
+### Multiple elements
+### Mathematical basis
+<p>
+<h3 style={{marginTop: '8rem'}}>=> Custom Paint</h3>
+</p>
+
+</Appear>
+
+</SplitRight>
+
+---
+
+# Custom Paint
+
+"A widget that provides a canvas on which to draw during the paint phase."
+
+<Appear>
+
+- drawArc
+- drawCircle
+- drawOval
+- drawPath
+- drawRect
+- drawShadow
+- ...
+
+</Appear>
+
+---
+
+<CodeSurferColumns sizes={[3,1]}>
+
+<Step>
+
+```dart file=./assets/code/nutrition/pie_painter/1.dart
+```
+
+<img style={{height: '75%'}} src={NutritionPiePainterResult1Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/pie_painter/2.dart
+```
+
+<img style={{height: '75%'}} src={NutritionPiePainterResult2Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/pie_painter/3.dart
+```
+
+<img style={{height: '75%'}} src={NutritionPiePainterResult3Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/pie_painter/4.dart
+```
+
+<img style={{height: '75%'}} src={NutritionPiePainterResult4Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/pie_painter/5.dart
+```
+
+<img style={{height: '75%'}} src={NutritionPiePainterResult5Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/pie_painter/6.dart
+```
+
+<img style={{height: '75%'}} src={NutritionPiePainterResult6Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/pie_painter/7.dart
+```
+
+<img style={{height: '75%'}} src={NutritionPiePainterResult7Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/pie_painter/8.dart
+```
+
+<img style={{height: '75%'}} src={NutritionPiePainterResult8Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/pie_painter/9.dart
+```
+
+<img style={{height: '75%'}} src={NutritionPiePainterResult9Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/pie_painter/10.dart
+```
+
+<img style={{height: '75%'}} src={NutritionPiePainterResult10Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/pie_painter/11.dart
+```
+
+<img style={{height: '75%'}} src={NutritionPiePainterResult11Image}/>
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns sizes={[3,1]}>
+
+<Step>
+
+```dart 22:51 file=./assets/code/nutrition/pie_chart/1.dart
+```
+
+<img style={{height: '75%'}} src={NutritionPieChartResult1Image}/>
+
+</Step>
+
+<Step>
+
+```dart file=./assets/code/nutrition/pie_chart/2.dart
+```
+
+<img style={{height: '75%'}} src={NutritionPieChartResult2Image}/>
+
+</Step>
+
+<Step>
+
+```dart 24:59 file=./assets/code/nutrition/pie_chart/3.dart
+```
+
+<video controls style={{height: '75%'}} src={NutritionPieChartResultAnimationVideo}/>
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+# Recap
+
+### Most of complex layouts can be broken down easily
+
+### Sometimes only primitive Flutter widgets are already enough
+
+### Start from the root and break it down
+---
+
+# Thanks!
+@ahawlitschek
